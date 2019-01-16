@@ -1,25 +1,25 @@
 # Mutex and Channel basics
 
 ### What is an atomic operation?
-> *Your answer here*
+> Atomic operations are program operations that run completely independently of other processes. This is because they are often used in the kernel, and are performed in one clock tick (?).
 
 ### What is a semaphore?
-> *Your answer here*
+> A semaphore works as a flag for a resource which is shared between multiple threads, and tells wheter the resource is currently being used. A semaphore must be indivisible, i.e. a semaphore must be toggled by an atomic operation.
 
 ### What is a mutex?
-> *Your answer here*
+> A mutex is a locking mechanism, used to ensure that only one task can access a resource at any given time.
 
 ### What is the difference between a mutex and a binary semaphore?
-> *Your answer here*
+> The main difference between a mutex and a binary semaphore is that a semaphore is a signaling mechanism, whereas mutex is a locking mechanism. Mutexes stricly prevents other tasks from accessing a resource when the resource is used by a task; a binary semaphore informs a task when or if it should start.
 
 ### What is a critical section?
-> *Your answer here*
+> A critical section is a part of a task which, in concurrent programming, accesses a shared resurce, and therefore can lead to unexpected or wrong behaviour if handled incorrectly. A critical section is usually protected, ensuring it cannot be executed by more than one process at a time.
 
 ### What is the difference between race conditions and data races?
- > *Your answer here*
+ > A race condition is when multiple threads are using a resource simultaneously, and therefore the result depends on the ordering in time. A data race occurs when two instructions from different threads access the same memory location and at least one of them is a write access. The main difference is that a race condition is a semantic error, which means that the ordering of actions matters for the outcome, whereas a data race is a program error. It is however to be noted that a race condition can be caused by a data race.
 
 ### List some advantages of using message passing over lock-based synchronization primitives.
-> *Your answer here*
+> The biggest advantage of message passing over lock-based or bottleneck syncronization primitives is that message passing allows for concurrency. This allows for more parallell hardware, which makes message passing more tolerant of higher communication latencies.
 
 ### List some advantages of using lock-based synchronization primitives over message passing.
-> *Your answer here*
+> Lock-based synchronization has the advantage of being simpler to handle, whereas message passing might lead to some very complex bugs and errors.
