@@ -68,8 +68,8 @@ func main() {
 	go number_server(add_number, control, number)
 
 	// block on finished from both "worker" goroutines
-	<-finished // TODO what are these for?
-	<-finished
+	fmt.Println("Finished: ", <-finished) // TODO what are these for?
+	fmt.Println("Finished: ", <-finished) // TODO what are these for?
 
 	control <- GetNumber
 	fmt.Println("The magic number is:", <-number)
